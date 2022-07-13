@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}
+  Patient History Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    
+    <div style="margin-left: 75px; margin-top:25px;margin-right:50px; width:90%; height: 100%;" class="position-relative p-10 p-md-10 m-md-10 text-center">
+        <div class='row'>
+            <div class="col-9">
+                <h2>Medical History</h2>
+            <p>Recently Visited Hospital</p>
+    {% if j!=0 %}
+      <table class="table table-hover table-dark ">
+        <thead class="thead-dark">
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Health Issue</th>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Hospital</th>
+                <th scope="col">Date Visited</th>
+                <th scope="col">City</th>
+                <th scope="col">Medicines Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.cause }}</td>
+                    <td>{{ item.doctor_name }}</td>
+                    <td>{{ item.hospital_name }}</td>
+                    <td>{{ item.date_visited }}</td>
+                    <td>{{ item.city }}</td>
+                    <td>{{ item.medicines }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   {% else %}
+       <h3>No Records to display</h3>
+    {% endif %}
+    <br>
+
+            <div class="checkbox mb-3">
+               <h6>Click Update to Enter New Record</h6>
+               <a class="btn btn-lg btn-info" href="{{ url_for('update_page') }}">Update</a>
+            </div>
+        </div>
+        <div class='col-3 d-none d-lg-block'>
+            <h3>Patient Details</h3>
+            <table class="table table-hover  table-dark table-bordered">
+                <tr>
+                  <th>Username</th>
+                  <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                  <th>id</th>
+                  <td>{{user.id}}</td>
+                </tr>
+                <tr>
+                  <th>Name </th>
+                  <td>{{user.name}}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{user.gender}}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{user.age}}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{user.email_address}}</td>
+                </tr>
+                <tr>
+                  <th>Aadhar no:</th>
+                  <td>{{user.aadhar_no}}</td>
+                </tr>
+                <tr>
+                  <th>Mobile No</th>
+                  <td>{{user.mobileno}}</td>
+                </tr>
+                <tr>
+                  <th>Address</th>
+                  <td>{{user.address}}</td>
+                </tr>
+              </table>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="position-relative overflow-hidden p-1 p-md-1 m-md-1 text-center" style="color:white">
+        <div class="container col-md-5 p-lg-5 mx-auto my-5">
+        <form method="POST" class="form-register form-horizontal" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://i.pinimg.com/564x/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.jpg" alt="User Icon" width="150px" height="150px" style="border-radius: 50%;">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+            <br>
+
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Address") }}
+
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Password") }}
+
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder="Name of the Patient") }}
+
+            {{ form.age.label() }}
+            {{ form.age(class="form-control", placeholder="Age") }}
+            <br>
+            
+            <div class="row">
+                <div class="col-sm-2 col-md-2">
+            {{ form.gender.label() }}
+                </div>
+                <div class="col-10 form-vertical text-left" >
+            {{ form.gender( placeholder="Gender") }}
+                </div>
+            </div>
+
+            {{ form.aadhar_no.label()}}
+            {{ form.aadhar_no(class="form-control",placeholder="Aadhar_no")}}
+
+            {{ form.address.label() }}
+            {{ form.address(class="form-control", placeholder="Address ") }}
+
+            {{ form.mobileno.label() }}
+            {{ form.mobileno(class="form-control", placeholder="Mobile number") }}
+       
+            <br>
+
+            <div class="checkbox mb-3">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+Update Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="position-relative overflow-hidden p-1 p-md-1 m-md-1 text-center" style="color:white">
+        <div class="container col-md-5 p-lg-5 mx-auto my-5">
+        <form method="POST" class="form-register form-horizontal" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                Enter the Details to update the history
+            </h1>
+            <br>
+
+            {{ form.hospital_name.label() }}
+            {{ form.hospital_name(class="form-control", placeholder="Name of the Hospital") }}
+          
+          
+            {{ form.doctor_name.label() }}
+            {{ form.doctor_name(class="form-control", placeholder="Name of the Doctor") }}
+
+            {{ form.cause.label() }}
+            {{ form.cause(class="form-control", placeholder="Disease/Cause") }}
+
+            {{ form.city.label() }}
+            {{ form.city(class="form-control", placeholder="Location of Hospital") }}
+
+            {{ form.medicines.label() }}
+            {{ form.medicines(class="form-control", placeholder="Medicines ") }}
+
+            {{ form.remarks.label() }}
+            {{ form.remarks(class="form-control", placeholder="Remarks") }}
+
+         
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}
