@@ -23,7 +23,7 @@ Whether you're aiming to detect early signs of chronic illness or just want a cl
 - `run.py` – Main application entry point.
 - `requirements.txt` – Python dependencies for the project.
 - `Procfile` – Used for deployment (e.g., Heroku).
-- `history/` – Likely contains patient history or related data files.
+- `history/` – Contains patient history and related tools.
 - `.git/` – Git version control directory.
 
 
